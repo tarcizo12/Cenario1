@@ -46,18 +46,26 @@ function BFS (grafo, comeco, fim){
     
 }
 
-const grafo1 = {
-    A: ['B', 'D'],
-    B: ['C', 'A'],
-    C: ['E', 'B'],
-    D: ['A', 'F'],
-    E: ['C', 'H'],
-    F: ['D', 'G'],
-    G: ['F', 'H', 'I'],
-    H: ['E', 'G', 'J'],
-    I: ['G', 'J'],
-    J: ['H', 'I'],
+function melhorCaminho(grafo, inicio, fim ){
+    const listaIndex = ['A','B','C','D']
+    const caminho = []
+
+
+    if()
+    
+    console.log( grafo[listaIndex.indexOf(inicio)].indexOf(fim) )
 }
 
-const algoritmoMenorCaminho = BFS(grafo1, 'B', 'G');
-console.log(algoritmoMenorCaminho);
+const grafo1 = [
+    ['B','D' ], // A
+    ['A', 'C'], // B
+    ['B', 'D'], // C
+    ['A', 'B']  // D
+] 
+
+
+
+
+//const algoritmoMenorCaminho = BFS(grafo1, 'B', 'A');
+
+melhorCaminho(grafo1)
