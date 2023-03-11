@@ -56,16 +56,35 @@ function seConectam(grafo, inicio, fim ){
     return vertice.indexOf(fim) != -1
 }
 
+function varredura(grafo, inicio, fim){
+    const listaIndex = ['A','B','C','D']
+    const partida = listaIndex.indexOf(inicio)
+    let verticeAtual = listaIndex[partida]
+    let cont = partida
+    let caminho = []
+
+    
+    do{
+        
+        cont += 1
+        verticeAtual = listaIndex[cont]
+        caminho.push[verticeAtual]
+        console.log(verticeAtual)
+    }while( !seConectam(grafo, verticeAtual,fim) )
+
+    console.log(caminho)
+   
+}
+
 const grafo1 = [
     ['B'], // A
-    ['A', 'C'], // B
-    ['B', 'D'], // C
-    ['A', 'B']  // D
+    ['C'], // B
+    ['D'], // C
+    []  // D
 ] 
 
 
 
 
 //const algoritmoMenorCaminho = BFS(grafo1, 'B', 'A');
-
-console.log(seConectam(grafo1,'A','C'))
+varredura(grafo1, 'A','D')
