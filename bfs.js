@@ -46,25 +46,14 @@ function BFS (grafo, comeco, fim){
     
 }
 
-function melhorCaminho(grafo, inicio, fim ){
+function seConectam(grafo, inicio, fim ){
     const listaIndex = ['A','B','C','D']
     const partida = listaIndex.indexOf(inicio)
     const vertice = grafo[partida]
-    const caminho = [] //armazenar o caminho
 
 
-    if(vertice.indexOf(fim) == -1){
-        console.log("Esses vertices nao se  conectam")
-        console.log(vertice)
-    }else if(vertice[0] == fim || vertice[1] == fim){
-        console.log("Esse vertice se conecta")
-        console.log(caminho)
-    }
-   
- 
-    //grafo[partida][i])  
-    //console.log(grafo[partida][0])
-   
+
+    return vertice.indexOf(fim) != -1
 }
 
 const grafo1 = [
@@ -79,4 +68,4 @@ const grafo1 = [
 
 //const algoritmoMenorCaminho = BFS(grafo1, 'B', 'A');
 
-melhorCaminho(grafo1,'A','D')
+console.log(seConectam(grafo1,'A','C'))
