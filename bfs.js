@@ -50,15 +50,15 @@ function melhorCaminho(grafo, inicio, fim ){
     const listaIndex = ['A','B','C','D']
     const partida = listaIndex.indexOf(inicio)
     const vertice = grafo[partida]
-    const setp = 0 //armazenar o caminho
+    const caminho = [] //armazenar o caminho
 
 
-    if(vertice[0] != fim && vertice[1] != fim){
+    if(vertice.indexOf(fim) == -1){
         console.log("Esses vertices nao se  conectam")
         console.log(vertice)
     }else if(vertice[0] == fim || vertice[1] == fim){
         console.log("Esse vertice se conecta")
-        console.log(vertice)
+        console.log(caminho)
     }
    
  
@@ -68,7 +68,7 @@ function melhorCaminho(grafo, inicio, fim ){
 }
 
 const grafo1 = [
-    ['B' ], // A
+    ['B'], // A
     ['A', 'C'], // B
     ['B', 'D'], // C
     ['A', 'B']  // D
