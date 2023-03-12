@@ -47,9 +47,6 @@ function BFS (grafo, comeco, fim){
 }
 
 
-
-
-
 const graph = {
     'A': ['B', 'C'],
     'B': ['D', 'E'],
@@ -89,10 +86,9 @@ function visitaNo(grafo, inicio, fim){
 }
 
 
-const teste = ['a','b']
-teste.shift()
+
 //const algoritmoMenorCaminho = BFS(grafo1, 'B', 'A');
-//console.log(bfs(graph))
+
 
 
 console.log(visitaNo(graph,'A','F'))
