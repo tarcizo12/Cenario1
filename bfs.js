@@ -46,44 +46,47 @@ function BFS (grafo, comeco, fim){
     
 }
 
-function seConectam(grafo, inicio, fim ){
-    const listaIndex = ['A','B','C','D']
-    const partida = listaIndex.indexOf(inicio)
-    const vertice = grafo[partida]
 
 
 
-    return vertice.indexOf(fim) != -1
+
+const graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
 }
 
-function varredura(grafo, inicio, fim){
-    const listaIndex = ['A','B','C','D']
-    const partida = listaIndex.indexOf(inicio)
-    let verticeAtual = listaIndex[partida]
-    let caminho = []
+const grafoTeste = {
+    'A': ['B', 'C'],
+    'B': ['C']
+}
 
+function visitaNo(grafo, inicio, fim){
+    const visitados = [inicio]
     
-    while( !seConectam(grafo,verticeAtual,fim) ){
-        caminho.push(verticeAtual)
-        verticeAtual = listaIndex[ listaIndex.indexOf(verticeAtual)+1 ] 
+
+    for(keys in grafo){
+        for(index in grafo[keys]){
+            const current = grafo[keys][index]
+            
+            if(!visitados.includes(current)){
+                visitados.push(current)
+            }
+            
+        }
     }
-    
-    caminho.push(verticeAtual)
 
-    console.log(caminho)
-   
+    console.log(visitados)
 }
 
-const grafo1 = [
-    ['B'], // A
-    ['C'], // B
-    ['D'], // C
-    ['E'], // D
-    []  // E
-] 
 
-
-
-
+const teste = ['a','b']
+teste.shift()
 //const algoritmoMenorCaminho = BFS(grafo1, 'B', 'A');
-varredura(grafo1, 'A','E')
+//console.log(bfs(graph))
+
+
+console.log(visitaNo(graph,'A'))
