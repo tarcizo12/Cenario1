@@ -60,17 +60,15 @@ function varredura(grafo, inicio, fim){
     const listaIndex = ['A','B','C','D']
     const partida = listaIndex.indexOf(inicio)
     let verticeAtual = listaIndex[partida]
-    let cont = partida
     let caminho = []
 
     
-    do{
-        
-        cont += 1
-        verticeAtual = listaIndex[cont]
-        caminho.push[verticeAtual]
-        console.log(verticeAtual)
-    }while( !seConectam(grafo, verticeAtual,fim) )
+    while( !seConectam(grafo,verticeAtual,fim) ){
+        caminho.push(verticeAtual)
+        verticeAtual = listaIndex[ listaIndex.indexOf(verticeAtual)+1 ] 
+    }
+    
+    caminho.push(verticeAtual)
 
     console.log(caminho)
    
@@ -80,11 +78,12 @@ const grafo1 = [
     ['B'], // A
     ['C'], // B
     ['D'], // C
-    []  // D
+    ['E'], // D
+    []  // E
 ] 
 
 
 
 
 //const algoritmoMenorCaminho = BFS(grafo1, 'B', 'A');
-varredura(grafo1, 'A','D')
+varredura(grafo1, 'A','E')
