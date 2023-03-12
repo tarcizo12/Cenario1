@@ -74,6 +74,12 @@ function visitaNo(grafo, inicio, fim){
             
             if(!visitados.includes(current)){
                 visitados.push(current)
+                
+                //console.log(current)
+                
+                if(current == fim){
+                    return visitados
+                }
             }
             
         }
@@ -89,4 +95,4 @@ teste.shift()
 //console.log(bfs(graph))
 
 
-console.log(visitaNo(graph,'A'))
+console.log(visitaNo(graph,'A','F'))
