@@ -24,7 +24,7 @@ function bfs(grafo, inicio, fim) {
         }
         // Retorna o caminho encontrado
         return caminho;
-      }
+    }
 
 
       // Se o nó atual não for o nó final, visita seus vizinhos
@@ -40,7 +40,7 @@ function bfs(grafo, inicio, fim) {
       }
     }
 
-    
+
     // Se o nó final não foi encontrado, retorna null
     return null;
   }
@@ -55,10 +55,17 @@ function bfs(grafo, inicio, fim) {
     "E": ["C", "D"],
     "F": ["D"]
   };
+
+  let grafoDois = {
+    "A": ["B","D"],
+    "B": ["C"],
+    "C": ["D"],
+    "D": []
+  }
   
   let inicio = "A";
-  let fim = "F";
+  let fim = "D";
   
-  let caminho = bfs(grafo, inicio, fim);
+  let caminho = bfs(grafoDois, inicio, fim);
   
   console.log("Caminho encontrado:", caminho);
